@@ -1,0 +1,78 @@
+{
+    "name": "1",
+    "maps": [
+        {
+            "name": "33",
+            "id": "133348e7-8b75-4a3a-a854-f3ecfda7d00d",
+            "actions": [
+                {
+                    "name": "dir",
+                    "type": "Value",
+                    "id": "9086d56a-7d06-4b0c-84f8-964d6ecb741d",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "wasd",
+                    "id": "b6db3b15-b2cd-441c-b23b-787d85c425c8",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "dir",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "23aa9495-6272-4672-9e6a-520a9a4c6d11",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "dir",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "b80da3fd-4310-41d8-997d-cab87887c4fd",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "dir",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "ec420fbe-d733-44a8-94b6-53ab78a6a9b2",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "dir",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "1de1db72-f821-4279-ae16-3eb1dee45240",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "dir",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
