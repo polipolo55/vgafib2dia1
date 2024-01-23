@@ -35,6 +35,24 @@ public partial class @_1: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Value"",
+                    ""id"": ""8366544e-73f9-4662-b604-90b287fdc232"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""c0dd4cc7-98b6-45d5-bbb8-71462395028a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +110,28 @@ public partial class @_1: IInputActionCollection2, IDisposable
                     ""action"": ""dir"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""feeb5679-8cf1-4b61-9e4d-aa5999e6bb86"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": ""ScaleVector2(x=0.2,y=0.2)"",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eac553fc-310c-40a5-adb4-d721860c1a14"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -101,6 +141,8 @@ public partial class @_1: IInputActionCollection2, IDisposable
         // 33
         m__33 = asset.FindActionMap("33", throwIfNotFound: true);
         m__33_dir = m__33.FindAction("dir", throwIfNotFound: true);
+        m__33_Rotate = m__33.FindAction("Rotate", throwIfNotFound: true);
+        m__33_shoot = m__33.FindAction("shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,11 +205,15 @@ public partial class @_1: IInputActionCollection2, IDisposable
     private readonly InputActionMap m__33;
     private List<I_33Actions> m__33ActionsCallbackInterfaces = new List<I_33Actions>();
     private readonly InputAction m__33_dir;
+    private readonly InputAction m__33_Rotate;
+    private readonly InputAction m__33_shoot;
     public struct _33Actions
     {
         private @_1 m_Wrapper;
         public _33Actions(@_1 wrapper) { m_Wrapper = wrapper; }
         public InputAction @dir => m_Wrapper.m__33_dir;
+        public InputAction @Rotate => m_Wrapper.m__33_Rotate;
+        public InputAction @shoot => m_Wrapper.m__33_shoot;
         public InputActionMap Get() { return m_Wrapper.m__33; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -180,6 +226,12 @@ public partial class @_1: IInputActionCollection2, IDisposable
             @dir.started += instance.OnDir;
             @dir.performed += instance.OnDir;
             @dir.canceled += instance.OnDir;
+            @Rotate.started += instance.OnRotate;
+            @Rotate.performed += instance.OnRotate;
+            @Rotate.canceled += instance.OnRotate;
+            @shoot.started += instance.OnShoot;
+            @shoot.performed += instance.OnShoot;
+            @shoot.canceled += instance.OnShoot;
         }
 
         private void UnregisterCallbacks(I_33Actions instance)
@@ -187,6 +239,12 @@ public partial class @_1: IInputActionCollection2, IDisposable
             @dir.started -= instance.OnDir;
             @dir.performed -= instance.OnDir;
             @dir.canceled -= instance.OnDir;
+            @Rotate.started -= instance.OnRotate;
+            @Rotate.performed -= instance.OnRotate;
+            @Rotate.canceled -= instance.OnRotate;
+            @shoot.started -= instance.OnShoot;
+            @shoot.performed -= instance.OnShoot;
+            @shoot.canceled -= instance.OnShoot;
         }
 
         public void RemoveCallbacks(I_33Actions instance)
@@ -207,5 +265,7 @@ public partial class @_1: IInputActionCollection2, IDisposable
     public interface I_33Actions
     {
         void OnDir(InputAction.CallbackContext context);
+        void OnRotate(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
 }
