@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class InputManager : MonoBehaviour
 {
     public Vector2 movement, rotate;
-    bool isShooting = false;
+    public bool isShooting = false;
 
     public void OnMovement(InputAction.CallbackContext ctx)
     {

@@ -18,7 +18,7 @@ public class RigidBodyMovementBehaviour : MonoBehaviour, IMovementBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(Vector3.up + transform.position,Vector3.up + transform.position + _dir);
+        Gizmos.DrawLine(Vector3.up + transform.position, Vector3.up + transform.position + _dir);
     }
     public void Move()
     {
@@ -52,10 +52,12 @@ public class RigidBodyMovementBehaviour : MonoBehaviour, IMovementBehaviour
         throw new System.NotImplementedException();
     }
 
-    public void Rotate(Vector2 rotation) 
+    public void Rotate(Vector2 rotation)
     {
         float rot = rotation.x;
         _rb.rotation *= Quaternion.Euler(0, rotation.x, 0);
     }
-    
+
+    public float getSpeed() { return _rb.velocity.magnitude; }
+
 }

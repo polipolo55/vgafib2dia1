@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance {  get; private set; }
 
     public HealthBehaviour playerHealth;
+    public CollectionableBehaviour playerCoins;
     private void Awake()
     {
         if(instance != null)

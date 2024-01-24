@@ -10,4 +10,5 @@ public interface IMovementBehaviour
     public void MoveToPoint(Vector3 target);
     public void MoveToPoint(Vector3 target, float speed);
     public void Rotate(Vector2 rotation);
+    public float getSpeed();
 }

@@ -52,4 +52,6 @@ public class NavMeshBehaviour : MonoBehaviour, IMovementBehaviour
     public void setDir(Vector3 dir) { _dir = dir; }
 
     public void setSpeed(float speed) { _agent.speed = speed; }
+
+    public float getSpeed() { return _agent.velocity.magnitude; }
 }
