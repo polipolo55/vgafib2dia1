@@ -44,7 +44,8 @@ public class RigidBodyMovementBehaviour : MonoBehaviour, IMovementBehaviour
 
     public void MoveToPoint(Vector3 target)
     {
-        throw new System.NotImplementedException();
+        setDir((target - _rb.position).normalized);
+        Move();
     }
 
     public void MoveToPoint(Vector3 target, float speed)
